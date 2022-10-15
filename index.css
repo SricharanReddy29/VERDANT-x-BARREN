@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Nunito:wght@300;500&family=Philosopher&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{  
+  --BG-COLOR:rgb(9, 9, 29);
+  --ALT-COLOR:rgb(19, 135, 19);
+  --ALT-COLOR2:rgb(210, 36, 71);
+
+
+  --FONT1:michroma;
+}
+
+header{
+   display: flex;
+   justify-content:center ;
+   align-items: center;
+   height: 100px;
+}
+h1:first-child{
+    color: var(--ALT-COLOR);
+}
+
+h1:last-child{
+    color: var(--ALT-COLOR2);
+}
+
+header h1{
+   font-size: 2rem;
+   font-family: var(--FONT1);
+   padding: 1rem;
+}
+
+.switch-btn{
+  height: 80px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  border: 0.3px solid black;
+  border-radius: 70px;
+  cursor: pointer;
+  background-color: var(--ALT-COLOR);
+  box-shadow: 0px 0px 20px var(--BG-COLOR) inset;
+ 
+}
+
+.switch-btn input{
+    appearance: none;
+    align-self: center;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.switch-btn span{
+   /*  position: absolute; */
+    position: relative;
+    background-image: url('img/earth.png');
+    height: 80px;
+    width: 132px;
+    left:-130px;
+    background-size: auto 80px;
+    background-repeat: no-repeat;
+    transition: all 0.5s;
+    transform: scaleX(0px);
+}
+
+.switch-btn input:checked ~ span{
+    left:5px;
+    background-image: url('img/pol-earth.png');
+    height: 80px;
+    width: 132px;
+    background-size: auto 80px;
+    background-repeat: no-repeat;
+    transition: all 0.5s;
+    transform: scaleX(5px);
+}
+
+@media screen and (max-width:760px) {
+     
+    header h1{
+        font-size: 1rem;
+    }
+    .switch-btn{
+        height:50px;
+        width: 120px;
+     }
+   
+    .switch-btn span{
+        height:50px;
+        width: 90px;
+        background-size: auto 50px;
+        left:-60px
+    }
+
+    .switch-btn input:checked ~ span{
+        height:50px;
+        width: 90px;
+        background-size: auto 50px;
+    }
+}
