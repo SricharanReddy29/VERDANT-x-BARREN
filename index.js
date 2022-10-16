@@ -1,16 +1,24 @@
 let bon=1;
 document.querySelector('#mbt').addEventListener("click",(event)=>{
     bon=bon*-1;
+    let p=document.querySelector('#n');
     let img=document.querySelector('#img');
     if(bon<0){
-    document.querySelector('#galaxy').style.display="none";
-    document.querySelector('#verdant').style.display="block";
+        document.querySelector('#galaxy').style.display="none";
+    if(p.checked==0){
+        document.querySelector('#verdant').style.display="block";
+    }
+    if(p.checked==1){
+      document.querySelector('#barren').style.display="block";
+    }
+    
     img.src="img/gmouse.png";
     }
 
     else{
         document.querySelector('#galaxy').style.display="block";
         document.querySelector('#verdant').style.display="none";
+        document.querySelector('#barren').style.display="none";
         img.src="img/mouse.png";  
     }
 })
